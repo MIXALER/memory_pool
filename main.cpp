@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <mutex>
 
 /**
  * Memory Leak Caution!  Release memory manually.
@@ -97,15 +98,11 @@ void test()
     {
         t = new ThirdMemoryTest();
     }
-
 }
 
 int main()
 {
     test();
-    int p = 12;
-    int *q = &p;
-    short v = p;
     ListPool<int> iList;
     iList.AddNode(10);
     for (int i = 98; i > 1; i /= 10)
